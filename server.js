@@ -3,6 +3,7 @@ const app = express()
 const userAPI = require('./userlistAPI')
 const userDB = require("./userDB")
 const cookieParser = require('cookie-parser');
+const PORT = process.env.PORT || 3000
 app.use(cookieParser());
 
 app.use(express.json())
@@ -74,6 +75,6 @@ app.get("/user-list", (req, res) => {
 
 })
 
-app.listen(3000, () => {
-    console.log("listening on 3000");
+app.listen(PORT, () => {
+    console.log("listening on " + PORT);
 })
